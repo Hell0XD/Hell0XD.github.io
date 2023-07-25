@@ -6,33 +6,33 @@ import ProjectPreview from "@components/Project/ProjectPreview.astro";
 import Section from "@components/Section.astro";
 
 import csk from "@assets/dent.webp";
-import blindspot from "@assets/blindspot.png";
-import js from "@assets/jedentsvet.png";
+import blindspot from "@assets/blindspot.jpg";
+import js from "@assets/jedentsvet.webp";
 ---
 
 <Section>
-    <CategoryText id="projects" right>Projects</CategoryText>
-    <div
-        data-visible
-        class="max-w-6xl h-full py-10 md:py-20 md:pb-32 m-auto flex flex-col md:flex-row gap-6 animated-block !animate-none"
-    >
-        <div class="flex flex-1 flex-col gap-6">
-            <ProjectButton project="csk">ČSK</ProjectButton>
-            <ProjectPreview alt="ČSK project preview" img={csk} />
-        </div>
-        <div class="flex flex-1 flex-col-reverse md:flex-col gap-6">
-            <ProjectPreview alt="Blindspot project preview" img={blindspot} />
-            <ProjectButton project="blindspot">Blindspot</ProjectButton>
-            <div class="hidden md:block">
-                <ProjectMoreButton />
-            </div>
-        </div>
-        <div class="flex flex-1 flex-col gap-6">
-            <ProjectButton project="js-online">Jedensvět Online</ProjectButton>
-            <ProjectPreview alt="JS online project preview" img={js} />
-            <div class="md:hidden">
-                <ProjectMoreButton />
-            </div>
-        </div>
+  <CategoryText id="projects" right>Projects</CategoryText>
+  <div
+    data-visible
+    class="max-w-6xl h-full py-10 md:py-20 md:pb-32 m-auto flex flex-col md:flex-row gap-6 animated-block !animate-none"
+  >
+    <div class="flex flex-1 flex-col gap-6">
+      <ProjectButton project="csk">ČSK</ProjectButton>
+      <ProjectPreview alt="ČSK project preview" img={csk} />
     </div>
+    <div class="flex flex-1 flex-col-reverse md:flex-col gap-6">
+      <ProjectPreview alt="Blindspot project preview" img={blindspot} />
+      <ProjectButton project="blindspot">Blindspot</ProjectButton>
+      <div class="hidden md:block">
+        <ProjectMoreButton />
+      </div>
+    </div>
+    <div class="flex flex-1 flex-col gap-6">
+      <ProjectButton project="js-online">Jedensvět Online</ProjectButton>
+      <ProjectPreview alt="JS online project preview" img={js} />
+      <div class="md:hidden">
+        <ProjectMoreButton />
+      </div>
+    </div>
+  </div>
 </Section>

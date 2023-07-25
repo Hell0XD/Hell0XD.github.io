@@ -8,7 +8,7 @@ import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://max.muller.live",
+  site: "https://maxmuller.me",
   integrations: [tailwind(), sitemap(), compress(), mdx(), prefetch()],
   build: {
     inlineStylesheets: 'auto',
