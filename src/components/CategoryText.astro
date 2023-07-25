@@ -1,0 +1,32 @@
+---
+export interface Props {
+    id: string;
+    left?: boolean;
+    right?: boolean;
+}
+
+const { left, right, id } = Astro.props;
+---
+
+<div class="flex items-center">
+    <div
+        class:list={[
+            "w-full max-w-md h-[1px] inline-block mr-8",
+            { "bg-white": left },
+        ]}
+    >
+    </div>
+    <h2
+        id={id}
+        class="gradient-text inline-block text-2xl font-bold tracking-tighter"
+    >
+        <slot />
+    </h2>
+    <div
+        class:list={[
+            "w-full max-w-md h-[1px] inline-block ml-8",
+            { "bg-white": right },
+        ]}
+    >
+    </div>
+</div>

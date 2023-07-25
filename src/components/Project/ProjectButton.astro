@@ -1,0 +1,12 @@
+---
+export interface Props {
+    project: string;
+}
+---
+
+<a
+    href={"/projects/" + Astro.props.project}
+    class="border-white border rounded-xl py-3 px-6 text-center text-md-l font-medium transition-colors hover:bg-white hover:text-black cursor-interaction"
+>
+    <slot />
+</a>

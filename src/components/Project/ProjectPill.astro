@@ -1,0 +1,14 @@
+---
+interface Props {
+    class?: string;
+}
+---
+
+<div
+    class:list={[
+        "rounded-3xl py-[2px] px-4 text-center font-medium",
+        Astro.props.class,
+    ]}
+>
+    <slot />
+</div>

@@ -1,0 +1,22 @@
+<script>
+    const els = document.querySelectorAll("[data-visible]");
+
+    let options = {
+        root: null,
+        threshold: 0.1,
+    };
+
+    const intersectionCallback: IntersectionObserverCallback = (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                (entry.target as any).classList.remove("!animate-none");
+            }
+        });
+    };
+
+    let observer = new IntersectionObserver(intersectionCallback, options);
+    for (let index = 0; index < els.length; index++) {
+        const el = els[index];
+        observer.observe(el);
+    }
+</script>

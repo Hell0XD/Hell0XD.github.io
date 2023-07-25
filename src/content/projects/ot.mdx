@@ -1,0 +1,46 @@
+---
+name: "OT"
+desc: "Programming language"
+tags: ["Compiler", "VM"]
+primary-color: "white"
+primary-text: "#1F1E1D"
+background: "#66aff5"
+image: "/images/ot-main.webp"
+image-small: "/images/ot-main-small.webp"
+position: 3
+---
+import Flex from "@markdown/Flex.astro";
+import FlexItem from "@markdown/FlexItem.astro";
+import BigText from "@markdown/BigText.astro";
+import MovingCard from "@markdown/MovingCard.astro";
+
+import blindspot_imac from "@assets/blindspot_imac.webp";
+import blindspot_mobile from "@assets/blindspot_mobile.webp";
+
+This was is long-term graduation thesis. It is a concept about how to create a full language with **compiler**,
+**parser** and **VM** without any third-party dependecies. I created the whole project in **Rust** and splited it to multiple libraries to share
+some code. The project website can be found [here](https://otlang.netlify.app/), on the website there are simple docs how to use the language
+and in _Download_ section there are precompiled binaries for some platforms. You can try the language without the binaries in _Editor_
+section (the compiler and vm is for the web compiled to **WASM**). The project source code can be found at [github.com/Hell0XD/otlang](https://github.com/Hell0XD/otlang)
+
+<div class="mt-5">
+<Flex>
+    <FlexItem>
+        <BigText text="Dynamic language from LISP family." />
+    </FlexItem>
+    <FlexItem>
+        Many of the features of the language are easy syntax, **FFI**, good performance for dynamic language, **JIT compiler**, pattern matching, **tailcall** optimization and many more.
+
+        ```lisp
+
+            (defn F
+                [0] 0
+                [1] 1
+                [n] (+ (F (- n 1)) (F (- n 2)))
+            )
+
+
+        ```
+    </FlexItem>
+</Flex>
+</div>

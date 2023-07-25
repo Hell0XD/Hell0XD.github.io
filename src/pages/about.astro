@@ -1,0 +1,216 @@
+---
+import { Icon } from "astro-icon";
+import Background from "../components/Background.astro";
+import Layout from "../layouts/Layout.astro";
+import AnimatedText from "../components/AnimatedText.astro";
+import Footer from "../components/Footer.astro";
+import Back from "@components/Back.astro";
+---
+
+<Layout title="About">
+    <Icon class="absolute h-[1300px] right-[-70px]" name="wigle" />
+    <Icon class="absolute h-[1300px] bottom-0 left-[-70px]" name="wigle2" />
+
+    <Background>
+        <div class="max-w-7xl m-auto px-7">
+            <h1 class="gradient-text text-2xl font-bold">About</h1>
+            <div class="max-w-5xl m-auto mt-10 lg:mt-20">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="flex flex-col items-center lg:items-end">
+                        <p class="max-w-md text-md font-medium">
+                            <AnimatedText>
+                                My journey began with <span
+                                    class="text-secondary"
+                                    >game development</span
+                                >, where I honed my skills in creating
+                                captivating experiences using <span
+                                    class="text-secondary">Game Maker</span
+                                > and <span class="text-secondary">Unity</span>,
+                                utilizing both Game Maker Script and visual
+                                coding. This foundation allowed me to grasp the
+                                fundamentals of software development and sparked
+                                my curiosity for more.
+                            </AnimatedText>
+                        </p>
+                        <Icon class="mt-10" width="90" name="unity" />
+                    </div>
+                    <Icon
+                        class="m-auto mt-6 lg:mt-0"
+                        width="270"
+                        name="gamemaker"
+                    />
+                </div>
+                <div
+                    class="flex flex-col-reverse lg:flex-row justify-between mt-10"
+                >
+                    <Icon
+                        class="m-auto mt-5 lg:mt-10"
+                        width="110"
+                        name="java"
+                    />
+                    <p class="max-w-lg text-right text-md font-medium">
+                        <AnimatedText>
+                            As I delved further into the realm of programming, I
+                            transitioned to building console applications using
+                            <span class="text-secondary">Java</span> and <span
+                                class="text-secondary">C++</span
+                            >. This foray exposed me to the intricacies of
+                            creating robust and efficient software, shaping my
+                            problem-solving abilities and attention to detail.
+                        </AnimatedText>
+                    </p>
+                </div>
+                <Icon width="115" class="m-auto my-10" name="cpp" />
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+                    <div class="lg:mt-12">
+                        <p class="max-w-xl text-md font-medium">
+                            <AnimatedText>
+                                Driven by a desire to expand my horizons, I
+                                ventured into the realm of <span
+                                    class="text-secondary">web development</span
+                                > and <span class="text-secondary">UI</span> design.
+                                Crafting visually appealing and user-friendly websites
+                                became my forte as I leveraged my understanding of
+                                <span class="text-secondary">front-end</span> technologies
+                                and delved into the world of <span
+                                    class="text-secondary">back-end</span
+                                > development. This exploration led me to develop
+                                <span class="text-secondary"
+                                    >content management systems</span
+                                > (CMSs) and <span class="text-secondary"
+                                    >microservices</span
+                                >, empowering businesses to deliver dynamic and
+                                scalable <span class="text-secondary">web</span>
+                                solutions.
+                            </AnimatedText>
+                        </p>
+                        <div
+                            class="lg:ml-20 mt-12 lg:mt-0 flex gap-10 lg:gap-0 justify-center lg:justify-between"
+                        >
+                            <Icon width="50" name="rabbitmq" />
+                            <Icon class="lg:mt-24" width="115" name="oauth" />
+                            <Icon class="lg:mt-12" width="83" name="js" />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-row lg:flex-col justify-center lg:justify-normal flex-1 gap-10"
+                    >
+                        <Icon width="64" name="figma" />
+                        <Icon
+                            class="self-center lg:ml-20"
+                            width="90"
+                            name="css"
+                        />
+                        <Icon
+                            class="lg:ml-8 lg:mt-12"
+                            width="92"
+                            name="react"
+                        />
+                    </div>
+                </div>
+                <div
+                    class="flex justify-center gap-10 lg:gap-0 lg:justify-between h-48 lg:ml-10 lg:mr-20"
+                >
+                    <Icon width="195" name="nodejs" />
+                    <Icon class="lg:self-end lg:mr-11" width="90" name="go" />
+                    <Icon
+                        class="lg:self-start hidden lg:block"
+                        width="105"
+                        name="mysql"
+                    />
+                </div>
+                <div
+                    class="flex flex-col-reverse items-center lg:flex-row justify-between lg:mt-20"
+                >
+                    <Icon class="mt-12 lg:mt-28 ml-4" width="150" name="rust" />
+                    <p class="flex-1 max-w-2xl text-right text-md font-medium">
+                        <AnimatedText>
+                            During my high school years, my fascination with the
+                            inner workings of systems and the intricacies of
+                            <span class="text-secondary">compilers</span> ignited.
+                            I embarked on creating streaming parsers using <span
+                                class="text-secondary">TypeScript</span
+                            >
+                            and <span class="text-secondary">Rust</span>,
+                            pushing the boundaries of data processing
+                            efficiency. Additionally, I delved into the realm of
+                            <span class="text-secondary">database</span> engines,
+                            further expanding my knowledge of <span
+                                class="text-secondary"
+                                >system-level programming</span
+                            >.
+                        </AnimatedText>
+                    </p>
+                </div>
+                <div
+                    class="flex justify-center gap-10 lg:justify-between max-w-md m-auto mt-12"
+                >
+                    <Icon class="lg:mt-12" width="86" name="ts" />
+                    <Icon width="111" name="sql" />
+                </div>
+                <div class="flex flex-col lg:flex-row mt-12 justify-between">
+                    <p class="max-w-lg text-md font-medium">
+                        <AnimatedText>
+                            In pursuit of pushing my skills to the limit, I
+                            undertook a challenging endeavor for my finals—a
+                            personal programming language built entirely from
+                            scratch. This ambitious project involved developing
+                            a <span class="text-secondary">just-in-time</span> (JIT)
+                            compiler and building a seamless <span
+                                class="text-secondary"
+                                >foreign function interface</span
+                            >
+                            (FFI), showcasing my dedication to exploring cutting-edge
+                            concepts and embracing the art of <span
+                                class="text-secondary">language design</span
+                            >.
+                        </AnimatedText>
+                    </p>
+                    <Icon
+                        class="mt-12 self-center lg:mt-32 lg:mr-28"
+                        width="150"
+                        name="ot"
+                    />
+                </div>
+                <p class="mt-20 lg:mt-40 text-md font-medium">
+                    <AnimatedText>
+                        Throughout my journey, I've developed a versatile skill
+                        set, combining my expertise in game development, web
+                        technologies, system-level programming, and compiler
+                        design. This amalgamation allows me to approach projects
+                        from multiple angles, adapting to the unique
+                        requirements of each endeavor.
+                    </AnimatedText>
+                </p>
+                <p class="mt-10 lg:mt-20 text-md font-medium">
+                    <AnimatedText>
+                        I'm excited to share my knowledge, experiences, and
+                        creations with you through this website. Whether you're
+                        seeking consultation, collaboration, or simply exploring
+                        the possibilities of software development, I'm here to
+                        assist you in transforming ideas into reality.
+                    </AnimatedText>
+                </p>
+                <h2 class="text-xl font-medium text-center my-16">
+                    My current favourite technologies
+                </h2>
+                <div class="flex max-w-lg gap-5 justify-between m-auto mb-20">
+                    <Icon width="121" name="rust" />
+                    <Icon width="92" name="deno" />
+                    <Icon width="87" name="tailwind" />
+                    <Icon width="80" name="astro" />
+                </div>
+            </div>
+        </div>
+        <Footer />
+    </Background>
+</Layout>
+
+<style>
+    svg {
+        transition: transform 0.4s;
+    }
+    svg:hover {
+        transform: scale(1.1);
+    }
+</style>

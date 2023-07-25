@@ -1,0 +1,45 @@
+---
+export interface Props {
+    class?: string;
+    transform: number;
+}
+
+const { transform, class: className } = Astro.props;
+---
+
+<div
+    class:list={["p-8 moving rounded-3xl shadow-2xl", className]}
+    data-transform={transform}
+>
+    <slot />
+</div>
+
+<script>
+    const blocks = document.getElementsByClassName("moving");
+
+    const vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+    );
+
+    if (vw > 768) {
+        document.addEventListener("mousemove", (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            const height = window.innerHeight / 2;
+            const width = window.innerWidth / 2;
+
+            const moveX = width - x;
+            const moveY = height - y;
+
+            for (const iterator of blocks) {
+                const block = iterator as HTMLElement;
+                const transform = Number(block.dataset.transform);
+                block.style.transform = `translate(${moveX / transform}px, ${
+                    moveY / transform
+                }px)`;
+            }
+        });
+    }
+</script>

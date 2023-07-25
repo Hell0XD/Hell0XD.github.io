@@ -1,0 +1,42 @@
+---
+import ProjectCard from "@components/Project/ProjectCard.astro";
+import Background from "../components/Background.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "@components/Footer.astro";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+---
+
+<Layout title="Projects">
+  <Background>
+    <div class="max-w-7xl m-auto px-7">
+      <h1 class="text-2xl font-bold gradient-text">Projects</h1>
+      <div
+        class="flex flex-wrap gap-8 max-w-5xl justify-center m-auto md:mt-4 py-12 px-2 xl:px-0"
+      >
+        {
+          projects
+            .sort((a, b) => (a.data.position || 0) - (b.data.position || 0))
+            .map((project) => (
+              <ProjectCard
+                href={`projects/${project.slug}`}
+                bg={project.data.background}
+                text={{
+                  color: "#1F1E1D",
+                  desc: project.data.desc,
+                  name: project.data.name,
+                }}
+                pill={{
+                  text: project.data["primary-text"],
+                  bg: project.data["primary-color"],
+                  contents: project.data.tags,
+                }}
+              />
+            ))
+        }
+      </div>
+    </div>
+    <Footer />
+  </Background>
+</Layout>

@@ -1,0 +1,66 @@
+---
+import Icon from "astro-icon";
+import NavLink from "./NavLink.astro";
+---
+
+<nav class="fixed z-10 w-full pointer-events-none">
+    <label class="pointer-events-auto" for="navbar">
+        <span class="w-0 h-0 block overflow-hidden">Open navigation</span>
+        <Icon
+            class="absolute right-5 md:hidden top-5 open"
+            width="42"
+            height="42"
+            name="menu"
+        />
+        <Icon
+            class="absolute right-5 md:hidden top-5 hidden close"
+            width="42"
+            height="42"
+            name="close"
+        />
+    </label>
+    <input id="navbar" type="checkbox" class="appearance-none absolute" />
+    <div class="max-w-7xl m-auto pr-6 h-full md:flex justify-end items-center">
+        <div
+            class="pointer-events-auto flex flex-col md:flex-row gap-5 backdrop-blur-sm p-6 mt-20 shadow md:shadow-none md:mt-5 rounded-xl"
+        >
+            <NavLink rel="prefetch" href="/">home</NavLink>
+            <NavLink rel="prefetch" href="/about">about</NavLink>
+            <NavLink rel="prefetch" href="/projects">projects</NavLink>
+            <NavLink href="/#contact">contact</NavLink>
+            <!--<NavLink target="_blank" href="#">
+                blog <Icon class="inline ml-1 w-3 md:w-2" name="external" />
+            </NavLink>-->
+        </div>
+    </div>
+</nav>
+
+<style>
+    input + div {
+        display: none;
+    }
+
+    input:checked + div {
+        display: flex;
+    }
+</style>
+
+<script>
+    const label = document.querySelector("label[for='navbar']") as HTMLElement;
+    const menu = label.children[1];
+    const close = label.children[2];
+    const input = document.getElementById("navbar") as HTMLElement;
+
+    let open = false;
+    input.onchange = () => {
+        open = !open;
+
+        if (open) {
+            close.classList.remove("hidden");
+            menu.classList.add("hidden");
+        } else {
+            close.classList.add("hidden");
+            menu.classList.remove("hidden");
+        }
+    };
+</script>

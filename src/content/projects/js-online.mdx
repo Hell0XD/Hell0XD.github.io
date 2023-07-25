@@ -1,0 +1,51 @@
+---
+name: "JS Online"
+desc: "VOD platform for documentaries"
+tags: ["Video streaming", "a11y"]
+primary-color: "#00B1B6"
+primary-text: "#1F1E1D"
+background: "#FFDC00"
+image: "/images/js-main.png"
+image-small: "/images/js-main-mobile.png"
+position: 0
+---
+import Flex from "@markdown/Flex.astro";
+import FlexItem from "@markdown/FlexItem.astro";
+import BigText from "@markdown/BigText.astro";
+import MovingCard from "@markdown/MovingCard.astro";
+import js_mobile1 from "@assets/js_mobile1.png";
+import js_mobile2 from "@assets/js_mobile2.png";
+
+<Flex>
+    <FlexItem>
+        I had the opportunity to work on an exciting project called **Oneworld Online**, a captivating **video platform** dedicated to documentaries. One of the key highlights of **Oneworld Online** is its payment gateway, allowing users to easily purchase and **stream** documentaries from the comfort of their homes. The platform also boasts a **localized** video streaming feature, ensuring that english viewers  can enjoy a smooth and immersive experience. Additionally, users have the freedom to **rate** and **comment** on films. To further enhance the user experience, there is a voucher system that enables you to **purchase vouchers** for individual films or entire film packs, particularly beneficial during film festivals.
+    </FlexItem>
+    <FlexItem>
+        <div class="w-full h-7"></div>
+        <BigText text="Streaming of Czech documentaries." />
+    </FlexItem>
+</Flex>
+
+
+<Flex>
+    <FlexItem>
+        <MovingCard
+            class="bg-[#60B2B5] max-w-xs mt-7 md:ml-12"
+            transform={26}
+        >
+            <img  decode="async" loading="lazy" alt="Blindpot mobile images" src={js_mobile1} />
+        </MovingCard>
+    </FlexItem>
+    <FlexItem>
+        <MovingCard 
+            class="bg-[#F489A5] mt-10 md:mt-28 md:mr-8 flex items-center"
+            transform={16}
+        >
+            <img decode="async" loading="lazy" alt="Blindspot imac image" src={js_mobile2} />
+        </MovingCard>
+        <div class="mt-10">
+            The website has custom **video player** with options for **subtitles**, **video quality** and **language**. 
+            As well as play session restoration and **analytics** about the player.
+        </div>
+    </FlexItem>
+</Flex>

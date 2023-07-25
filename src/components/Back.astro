@@ -1,0 +1,19 @@
+---
+import Icon from "astro-icon";
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href} class="inline-block group">
+    <span class="flex items-center gap-2">
+        <Icon
+            width="12"
+            height="12"
+            class="fill-white transform -scale-x-100"
+            name="arrow-right"
+        /><span class="group-hover:ml-1 transition-all">Back</span>
+    </span>
+</a>

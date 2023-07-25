@@ -1,0 +1,51 @@
+---
+name: "Blindspot"
+desc: "DDOS protection service"
+tags: ["SEO", "Web", "Dashboard"]
+primary-color: "#009688"
+primary-text: "white"
+background: "#EDEFF1"
+image: "/images/blindspot-main-small.webp"
+image-small: "/images/blindspot-main-mobile.webp"
+---
+import Flex from "@markdown/Flex.astro";
+import FlexItem from "@markdown/FlexItem.astro";
+import BigText from "@markdown/BigText.astro";
+import MovingCard from "@markdown/MovingCard.astro";
+
+import blindspot_imac from "@assets/blindspot_imac.webp";
+import blindspot_mobile from "@assets/blindspot_mobile.webp";
+
+<Flex>
+    <FlexItem>
+        <BigText text="Website and dashboard for DDoS protection service." />
+    </FlexItem>
+    <FlexItem>
+        During my time at **Blindpot**, I was fortunate enough 
+        to be involved in the development of two crucial components: 
+        the **landing page** and the **dashboard**. Engaging in this project
+         proved to be an immensely gratifying experience as I delved 
+         into the creation of a comprehensive localized **dashboard**,
+          enriched with a wide range of interactive graphs, tables,
+          and real-time data.
+    </FlexItem>
+</Flex>
+
+<Flex>
+    <FlexItem>
+        <MovingCard
+            class="bg-[#EDEFF1] mt-7 md:mr-5"
+            transform={13}
+        >
+            <img decode="async" loading="lazy" alt="Blindpot mobile images" src={blindspot_mobile} />
+        </MovingCard>
+    </FlexItem>
+    <FlexItem>
+        <MovingCard 
+            class="bg-[#EDEFF1] mt-10 md:mt-16 md:mr-5"
+            transform={26}
+        >
+            <img decode="async" loading="lazy" alt="Blindspot imac image" src={blindspot_imac} />
+        </MovingCard>
+    </FlexItem>
+</Flex>

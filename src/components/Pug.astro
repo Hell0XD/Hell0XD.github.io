@@ -1,0 +1,43 @@
+---
+import Icon from "astro-icon";
+---
+
+<div>
+    <div
+        class="pug cursor-interaction w-24 h-24 flex items-center justify-center bg-white rounded-full border"
+    >
+        <Icon class="stroke-black fill-black" width="30" name="arrow" />
+        <span class="absolute text-transparent font-bold"
+            ><span class="screen-reader">See</span>More<span
+                class="screen-reader">Projects</span
+            ></span
+        >
+    </div>
+</div>
+
+<style>
+    .screen-reader {
+        height: 1px;
+        width: 1;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    div {
+        filter: drop-shadow(0px 0px 8px rgba(255, 253, 253));
+        transition: filter 1s;
+    }
+
+    div:hover {
+        filter: drop-shadow(0px 0px 16px rgba(255, 253, 253)) !important;
+    }
+
+    .pug:hover span {
+        color: black;
+    }
+    .pug:hover svg {
+        stroke: white;
+        fill: white;
+    }
+</style>

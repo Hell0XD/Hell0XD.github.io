@@ -1,0 +1,24 @@
+<script>
+    const original = document.title;
+    let timeout: any;
+    let displayed_msg = false;
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            clearInterval(timeout);
+            if (displayed_msg) {
+                document.title = ":) Thank you";
+                setTimeout(() => {
+                    document.title = original;
+                }, 1600);
+                displayed_msg = false;
+            } else {
+                document.title = original;
+            }
+        } else {
+            timeout = setTimeout(() => {
+                document.title = ":( Please come back";
+                displayed_msg = true;
+            }, 5000);
+        }
+    });
+</script>

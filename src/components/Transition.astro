@@ -1,0 +1,53 @@
+<div
+  id="transition"
+  class="hidden w-screen h-screen fixed top-0 bg-[#1e1e1e] z-10 pointer-events-none"
+>
+</div>
+
+<style>
+  .in {
+    animation: transition 0.2s ease-out forwards;
+    opacity: 1;
+  }
+
+  .out {
+    animation: transition2 0.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes transition2 {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes transition {
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  let t = document.getElementById("transition") as HTMLElement;
+  let handle: any;
+
+  if (Boolean(sessionStorage.getItem("loading-played")) === true) {
+    clearTimeout(handle);
+    t.classList.remove("hidden");
+    t.classList.add("in");
+    handle = setTimeout(() => {
+      t.classList.add("hidden");
+    }, 200);
+  }
+
+  addEventListener("transition", (e) => {
+    clearTimeout(handle);
+    const event = e as any;
+    t.classList.add("out");
+    t.classList.remove("hidden");
+    handle = setTimeout(() => {
+      location.href = event.detail;
+    }, 200);
+  });
+</script>

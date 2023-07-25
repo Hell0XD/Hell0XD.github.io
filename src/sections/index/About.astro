@@ -1,0 +1,50 @@
+---
+import AnimatedText from "@components/AnimatedText.astro";
+import CategoryText from "@components/CategoryText.astro";
+import Icons from "@components/Icons.astro";
+import Pug from "@components/Pug.astro";
+import Section from "@components/Section.astro";
+---
+
+<Section>
+    <CategoryText id="about" left>About</CategoryText>
+    <div
+        class="flex flex-col lg:flex-row gap-5 items-center lg:justify-between my-10 lg:my-10"
+    >
+        <p class="max-w-md">
+            <AnimatedText class="font-medium text-md">
+                I'm a passionate <span class="text-secondary"
+                    >software developer</span
+                > with a journey that spans various domains within the field. With
+                four years of professional work experience and a total of seven years
+                in the <span class="text-secondary">IT</span> industry, I've had
+                the opportunity to explore and excel in different areas of <span
+                    class="text-secondary">development</span
+                >.
+            </AnimatedText>
+        </p>
+        <Icons />
+    </div>
+    <hr class="max-w-[190px] m-auto" />
+    <p class="max-w-md mt-10 m-auto">
+        <AnimatedText class="font-medium text-md">
+            My journey began with creating games using platforms like
+            <span class="text-secondary">Unity</span>, I transitioned to console
+            application development in
+            <span class="text-secondary">Java</span> and <span
+                class="text-secondary">C++</span
+            >, broadening my programming e<span class="opacity-80">x</span><span
+                class="opacity-60">p</span
+            ><span class="opacity-50">e</span><span class="opacity-40">r</span
+            ><span class="opacity-30">t</span><span class="opacity-20">i</span
+            ><span class="opacity-10">s</span><span class="opacity-5">e</span
+            ><span class="opacity-0">.</span>
+        </AnimatedText>
+    </p>
+    <div
+        data-visible
+        class="flex justify-center mt-16 animated-block !animation-none"
+    >
+        <a href="/about"><Pug /></a>
+    </div>
+</Section>

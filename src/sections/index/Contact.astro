@@ -1,0 +1,42 @@
+---
+import AnimatedText from "@components/AnimatedText.astro";
+import CategoryText from "@components/CategoryText.astro";
+import Section from "@components/Section.astro";
+import Icon from "astro-icon";
+---
+
+<Section marginBottom={false}>
+    <CategoryText id="contact" left right>Contact</CategoryText>
+
+    <div class="flex gap-10">
+        <div class="flex-1">
+            <h3 class="font-bold text-lg lg:text-xl mb-5">
+                <AnimatedText>
+                    Feel free to contact me on any of these platforms
+                </AnimatedText>
+            </h3>
+            <div data-visible class="flex gap-3 animated-block !animation-none">
+                <a
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/in/max-muller-dev/"
+                    ><Icon width="50" name="linkedin" /></a
+                >
+                <a aria-label="Github" href="https://github.com/Hell0XD"
+                    ><Icon width="50" name="github" /></a
+                >
+            </div>
+        </div>
+        <div class="lg:flex-1"></div>
+    </div>
+
+    <div class="absolute bottom-20 left-1/2 -translate-x-1/2">
+        <a href="/max_muller_cv.pdf">
+            <AnimatedText
+                class="uppercase transition-colors text-xl font-bold tracking-tighter link text-center"
+            >
+                Download
+                <span class="gradient-text link-ignore">cv</span>
+            </AnimatedText>
+        </a>
+    </div>
+</Section>

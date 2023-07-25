@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon";
+export interface Props {
+    img: string;
+    alt: string;
+}
+
+const { img, alt } = Astro.props;
+---
+
+<div
+    class="group preview overflow-hidden min-h-[300px] h-full w-full flex-1 rounded-xl relative drop-shadow-md"
+>
+    <Icon
+        class="svg-cursor absolute w-28 z-10 hidden fill-white group-hover:inline"
+        name="move"
+    />
+    <img
+        decoding="async"
+        loading="lazy"
+        alt={alt}
+        class="absolute select-none pointer-events-none full-w"
+        src={img}
+    />
+</div>
+
+<style>
+    .preview {
+        /*background-image: var(--img);
+        background-size: cover;*/
+    }
+
+    .svg-cursor {
+        animation-name: spining-cursor;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    @keyframes spining-cursor {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    const els = document.getElementsByClassName(
+        "preview"
+    ) as unknown as HTMLElement[];
+
+    for (const preview of els) {
+        const svg = preview.children[0] as HTMLElement;
+
+        // moving
+        let isDown = false;
+        let currentX = 0;
+        let currentY = 0;
+
+        let startX: number;
+        let startY: number;
+
+        const img = preview.children[1] as HTMLElement;
+
+        preview.addEventListener("mousedown", (e) => {
+            isDown = true;
+            startX = e.pageX;
+            startY = e.pageY;
+        });
+
+        preview.addEventListener("mouseleave", () => {
+            isDown = false;
+        });
+        preview.addEventListener("mouseup", () => {
+            isDown = false;
+        });
+
+        preview.addEventListener("mousemove", (e) => {
+            const hitbox = getOffset(preview);
+            const w = -(img.clientWidth - preview.clientWidth);
+            const h = -(img.clientHeight - preview.clientHeight);
+
+            svg.style.top = `${e.pageY - hitbox.top - 112 / 2}px`;
+            svg.style.left = `${e.pageX - hitbox.left - 112 / 2}px`;
+
+            if (!isDown) return;
+            e.preventDefault();
+
+            currentX -= startX - e.pageX;
+            startX = e.pageX;
+
+            currentY -= (startY - e.pageY) * 2.5;
+            startY = e.pageY;
+
+            if (currentY > 0) {
+                currentY = 0;
+            } else if (currentY < h) {
+                currentY = h;
+            }
+
+            if (currentX > 0) {
+                currentX = 0;
+            } else if (currentX < w) {
+                currentX = w;
+            }
+
+            img.style.left = `${currentX}px`;
+            img.style.top = `${currentY}px`;
+        });
+    }
+    function getOffset(el: HTMLElement) {
+        const rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY,
+        };
+    }
+</script>

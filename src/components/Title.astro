@@ -1,0 +1,55 @@
+<h2
+    class="text-xl md:text-2xl font-medium tracking-tighter flex md:flex-row flex-col pb-10"
+>
+    <div class="h-[60px] md:h-[96px] overflow-hidden">
+        <ul class="positions inline-block">
+            <li class="md:text-right">Software</li>
+            <li class="md:text-right">Mobile</li>
+            <li class="md:text-right">Back-end</li>
+            <li class="md:text-right">Front-end</li>
+            <li class="md:text-right">Software</li>
+        </ul>
+    </div>
+    <span class="hidden md:inline">&nbsp;</span>
+    <span class="gradient-text">developer</span>
+</h2>
+
+<style>
+    .positions {
+        animation-name: change2;
+        animation-delay: 2.5s;
+        animation-duration: 12s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes change2 {
+        0%,
+        23% {
+            transform: translate3d(0, 0, 0);
+        }
+        27%,
+        48% {
+            transform: translate3d(0, -20%, 0);
+        }
+        52%,
+        73% {
+            transform: translate3d(0, -40%, 0);
+        }
+        77%,
+        97% {
+            transform: translate3d(0, -60%, 0);
+        }
+
+        100% {
+            transform: translate3d(0, -80%, 0);
+        }
+    }
+</style>
+
+<script>
+    if (Boolean(sessionStorage.getItem("loading-played"))) {
+        const f = document.querySelector(".positions") as HTMLElement;
+
+        f.style.animationDelay = "0s";
+    }
+</script>

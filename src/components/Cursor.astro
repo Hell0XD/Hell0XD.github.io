@@ -1,0 +1,47 @@
+<span id="cursor"></span>
+
+<style>
+    #cursor {
+        pointer-events: none;
+        position: absolute;
+        border: solid 1px #ccc;
+        left: -60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transition: transform 0.3s;
+        transform: scale(1);
+    }
+</style>
+
+<script>
+    const cursor = document.getElementById("cursor") as HTMLElement;
+    let mouseX = -60 * 4,
+        mouseY = 0;
+    let xp = 0,
+        yp = 0;
+
+    let hide: number;
+
+    addEventListener(
+        "mousemove",
+        function (e) {
+            cursor.style.transform = "scale(1)";
+            mouseX = e.pageX - 30;
+            mouseY = e.pageY - 30;
+
+            this.clearTimeout(hide);
+            hide = setTimeout(() => {
+                cursor.style.transform = "scale(0)";
+            }, 800);
+        },
+        { passive: true }
+    );
+
+    setInterval(function () {
+        xp += (mouseX - xp) / 6;
+        yp += (mouseY - yp) / 6;
+        cursor.style.left = xp + "px";
+        cursor.style.top = yp + "px";
+    }, 30);
+</script>

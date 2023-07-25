@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div
+    data-visible
+    class="flex gap-7 mt-3 max-w-md flex-wrap justify-center animated-block !animate-none"
+>
+    <a aria-label="React" target="_blank" href="https://react.dev/"
+        ><Icon width="40" height="40" name="react" /></a
+    >
+    <a
+        aria-label="TypeScript"
+        target="_blank"
+        href="https://www.typescriptlang.org/"
+        ><Icon width="40" height="40" name="ts" /></a
+    >
+    <a aria-label="Sass" target="_blank" href="https://sass-lang.com/"
+        ><Icon width="40" height="40" name="sass" /></a
+    >
+    <a aria-label="TailwindCSS" target="_blank" href="https://tailwindcss.com/"
+        ><Icon width="40" height="40" name="tailwind" /></a
+    >
+    <a aria-label="Flutter" target="_blank" href="https://flutter.dev/"
+        ><Icon width="40" height="40" name="flutter" /></a
+    >
+    <a aria-label="Tauri" target="_blank" href="https://tauri.app/"
+        ><Icon width="40" height="40" name="tauri" /></a
+    >
+    <a aria-label="GraphQL" target="_blank" href="https://graphql.org/"
+        ><Icon width="40" height="40" name="graphql" /></a
+    >
+    <a aria-label="Rust" target="_blank" href="https://www.rust-lang.org/"
+        ><Icon width="40" height="40" name="rust" /></a
+    >
+    <a aria-label="Go" target="_blank" href="https://go.dev/"
+        ><Icon width="40" height="40" name="go" /></a
+    >
+    <a aria-label="Redis" target="_blank" href="https://redis.io/"
+        ><Icon width="40" name="redis" /></a
+    >
+    <a aria-label="Postgres" target="_blank" href="https://www.postgresql.org/"
+        ><Icon width="40" height="40" name="postgres" /></a
+    >
+    <a aria-label="MongoDB" target="_blank" href="https://www.mongodb.com/"
+        ><Icon width="40" height="40" name="mongo" /></a
+    >
+    <a aria-label="Docker" target="_blank" href="https://www.docker.com/"
+        ><Icon width="40" height="40" name="docker" /></a
+    >
+    <a aria-label="Git" target="_blank" href="https://git-scm.com/"
+        ><Icon width="40" height="40" name="git" /></a
+    >
+</div>
+
+<style>
+    svg {
+        transition: transform 0.4s;
+    }
+    svg:hover {
+        transform: scale(1.3);
+    }
+</style>

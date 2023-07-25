@@ -1,0 +1,71 @@
+---
+import Background from "@components/Background.astro";
+import Layout from "src/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { InferGetStaticPropsType } from "astro";
+import Footer from "@components/Footer.astro";
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { project: project.slug },
+    props: { entry: project },
+  }));
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.name}>
+  <Background>
+    <main
+      style={{
+        "--primary": entry.data["primary-color"],
+        "--primary-text": entry.data["primary-text"],
+      }}
+      class="max-w-7xl m-auto px-7 pt-20 pb-5"
+    >
+      <h1 class="text-2xl font-medium leading-tight">
+        {entry.data.name}
+      </h1>
+      <span class="mb-5 block text-sm">{entry.data.desc}</span>
+      <div class="flex gap-3 mb-5">
+        {
+          entry.data.tags.map((tag) => (
+            <span class="bg-[var(--primary)] font-medium text-[var(--primary-text)] py-1 px-4 rounded-2xl text-sm">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+      <div class="md:px-10 mb-10">
+        <picture>
+          <source media="(min-width:650px)" srcset={entry.data.image} />
+          <img
+            alt="Blindspot"
+            decoding="async"
+            src={entry.data["image-small"]}
+          />
+        </picture>
+      </div>
+      <div class="md:px-10 mb-10">
+        <Content />
+      </div>
+    </main>
+    <Footer />
+  </Background>
+</Layout>
+
+<style is:global>
+  p {
+    @apply text-md;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+</style>
