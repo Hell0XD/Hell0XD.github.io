@@ -8,6 +8,7 @@ const path = Astro.url.pathname;
 ---
 
 <a
+  x-path={path}
   href={href}
   {...rest}
   class:list={[

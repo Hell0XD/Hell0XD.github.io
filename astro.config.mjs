@@ -11,6 +11,7 @@ export default defineConfig({
   site: "https://max.muller.live",
   integrations: [tailwind(), sitemap(), compress(), mdx(), prefetch()],
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    format: "file",
   },
 });
