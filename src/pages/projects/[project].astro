@@ -46,6 +46,7 @@ const { Content } = await entry.render();
         <picture>
           <source media="(min-width:650px)" srcset={entry.data.image} />
           <img
+            style="aspect-ratio: 16/9.6;"
             alt="Blindspot"
             decoding="async"
             src={entry.data["image-small"]}
