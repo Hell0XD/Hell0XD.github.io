@@ -47,6 +47,9 @@
     t.classList.add("out");
     t.classList.remove("hidden");
     handle = setTimeout(() => {
+      setTimeout(() => {
+        t.classList.add("hidden");
+      }, 500);
       location.href = event.detail;
     }, 200);
   });
