@@ -20,14 +20,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Max Müller | {title}</title>
     <meta
       name="description"
       content="Welcome to Max Müller's Software Developer Portfolio. Explore my projects, skills, and expertise in software development."
     />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Max Müller | {title}</title>
 
+    <meta name="generator" content={Astro.generator} />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
